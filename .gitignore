@@ -1,3 +1,4 @@
-node_modules
 .next
 .vercel
+.mdx-data
+node_modules

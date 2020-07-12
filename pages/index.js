@@ -1,19 +1,7 @@
 import Link from "next/Link";
-import { getPosts } from "../lib/helpers.js";
+import { frontMatter as blogPosts } from "../pages/posts/**/*";
 
-export async function getStaticProps() {
-  const posts = await getPosts();
-
-  return {
-    props: { posts },
-  };
-}
-
-export default function Index({ posts }) {
-  if (!posts) {
-    return null;
-  }
-
+export default function Index() {
   return (
     <div>
       <header>
@@ -22,10 +10,10 @@ export default function Index({ posts }) {
       </header>
       <main>
         <ul>
-          {posts.map(({ title, slug }) => (
-            <li key={slug}>
-              <Link href={`/posts/${slug}`} as={`/posts/${slug}`}>
-                <a>{title}</a>
+          {blogPosts.map((p) => (
+            <li key={p.slug}>
+              <Link href={`posts/${p.slug}`} as={`posts/${p.slug}`}>
+                <a>{p.title}</a>
               </Link>
             </li>
           ))}

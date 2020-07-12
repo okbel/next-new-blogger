@@ -1,16 +1,19 @@
+const mdxPrism = require("mdx-prism");
 const remarkMath = require("remark-math");
+const remarkSlug = require("remark-slug");
 const rehypeKatex = require("rehype-katex");
-const remarkFrontMatter = require("remark-frontmatter");
-const rehypePrism = require("@mapbox/rehype-prism");
+const withMdxEnhanced = require("next-mdx-enhanced");
+const remarkCodeTitles = require("remark-code-titles");
+const remarkHeadings = require("remark-autolink-headings");
 
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkMath, remarkFrontMatter],
-    rehypePlugins: [rehypeKatex, rehypePrism],
+module.exports = withMdxEnhanced({
+  defaultLayout: true,
+  layoutPath: "layouts",
+  fileExtensions: ["md", "mdx"],
+  rehypePlugins: [rehypeKatex, mdxPrism],
+  remarkPlugins: [remarkMath, remarkHeadings, remarkSlug, remarkCodeTitles],
+})({
+  experimental: {
+    modern: true,
   },
-});
-
-module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "md", "mdx"],
 });

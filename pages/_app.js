@@ -1,15 +1,7 @@
 import Head from "next/Head";
 import { DefaultSeo } from "next-seo";
-import { MDXProvider } from "@mdx-js/react";
 
 import seoConfig from "../config/seo.json";
-import Wrapper from "../components/Wrapper.js";
-import Code from "../components/Code.js";
-
-const mdxComponents = {
-  wrapper: Wrapper,
-  code: Code,
-};
 
 export default function MyApp({ Component, pageProps, ...rest }) {
   return (
@@ -31,9 +23,7 @@ export default function MyApp({ Component, pageProps, ...rest }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <MDXProvider components={mdxComponents}>
-        <Component {...pageProps} />
-      </MDXProvider>
+      <Component {...pageProps} />
     </>
   );
 }
