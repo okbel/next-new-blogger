@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 import { frontMatter as blogPosts } from "../pages/posts/**/*";
 
 export default function Index() {
