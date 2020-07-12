@@ -1,3 +1,0 @@
-# Pensamientos
-
-Ultimamente estuve pensando.

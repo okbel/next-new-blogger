@@ -1,19 +1,34 @@
 import Link from "next/Link";
+import { getPosts } from "../lib/helpers.js";
+
+export async function getStaticProps() {
+  const posts = await getPosts();
+
+  return {
+    props: { posts },
+  };
+}
 
 export default function Index({ posts }) {
+  if (!posts) {
+    return null;
+  }
+
   return (
     <div>
-      <header>Welcome to my Blog</header>
+      <header>
+        <h1>San Blog</h1>
+        <p>science & code</p>
+      </header>
       <main>
         <ul>
-          <li>
-            <Link
-              href="/posts/student-solves-knot-problem"
-              as="/posts/student-solves-knot-problem"
-            >
-              <a> Graduate Student Solves Decades-Old Conway Knot Problem</a>
-            </Link>
-          </li>
+          {posts.map(({ title, slug }) => (
+            <li key={slug}>
+              <Link href={`/posts/${slug}`} as={`/posts/${slug}`}>
+                <a>{title}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
     </div>
