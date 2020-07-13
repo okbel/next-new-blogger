@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SEO from "../components/SEO.js";
+import SEO from "@/core/SEO.js";
 
 export default function Wrapper(frontMatter) {
   return ({ children }) => (

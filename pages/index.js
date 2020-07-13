@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { frontMatter as blogPosts } from "../pages/posts/**/*";
+import { frontMatter as posts } from "../pages/posts/**/*";
 
 export default function Index() {
   return (
@@ -10,7 +10,7 @@ export default function Index() {
       </header>
       <main>
         <ul>
-          {blogPosts.map((p) => (
+          {posts.map((p) => (
             <li key={p.slug}>
               <Link href={`posts/${p.slug}`} as={`posts/${p.slug}`}>
                 <a>{p.title}</a>

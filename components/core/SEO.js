@@ -1,5 +1,6 @@
 import React from "react";
 import { NextSeo, ArticleJsonLd } from "next-seo";
+import siteConfig from "../../siteConfig.json";
 
 export default function SEO({
   url,
@@ -11,26 +12,26 @@ export default function SEO({
   return (
     <>
       <NextSeo
-        title={`${title} – San Blog`}
+        title={`${title} – ${siteConfig.title}`}
         canonical={url}
         description={description}
         openGraph={{
+          url,
+          title,
+          description,
           type: "article",
           article: {
             publishedTime: date,
           },
-          url,
-          title,
-          description,
         }}
       />
       <ArticleJsonLd
-        authorName="Bel Curcio"
+        authorName={siteConfig.author}
         dateModified={date}
         datePublished={date}
         description={description}
         publisherLogo="/image.png"
-        publisherName="Bel Curcio"
+        publisherName={siteConfig.author}
         title={title}
         url={url}
       />
