@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { frontMatter as posts } from "../pages/posts/**/*";
+import { frontMatter as posts } from "../pages/posts/**/*.mdx";
 
 export default function Index() {
   return (

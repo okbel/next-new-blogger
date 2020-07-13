@@ -1,3 +1,4 @@
+import "@/styles/prism.css";
 import { DefaultSeo } from "next-seo";
 import Head from "@/core/Head.js";
 import { MDXProvider } from "@mdx-js/react";
