@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { frontMatter as postsArr } from "../pages/posts/*.mdx";
+import Header from "@/components/ui/Header";
 
 export async function getStaticProps() {
   return {
@@ -11,17 +12,14 @@ export async function getStaticProps() {
 
 export default function Index({ posts }) {
   return (
-    <div>
-      <header>
-        <h1>San Blog</h1>
-        <p>science & code</p>
-      </header>
+    <>
+      <Header />
       <main>
         <ul>
           {posts.map((p) => {
             const relativeURL = p.__resourcePath.replace(".mdx", "");
             return (
-              <li key={p.slug}>
+              <li key={p.relativeURL}>
                 <Link href={relativeURL} as={relativeURL}>
                   <a>{p.title}</a>
                 </Link>
@@ -30,6 +28,6 @@ export default function Index({ posts }) {
           })}
         </ul>
       </main>
-    </div>
+    </>
   );
 }

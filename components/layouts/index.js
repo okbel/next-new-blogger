@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SEO from "@/core/SEO.js";
+import Header from "@/components/ui/Header";
 
 export default function Wrapper(frontMatter) {
   const slug = frontMatter.__resourcePath
@@ -12,13 +13,11 @@ export default function Wrapper(frontMatter) {
         url={`https://next-new-blogger.vercel.app/posts/${slug}`}
         {...frontMatter}
       />
-      <header>
-        <h1>San Blog</h1>
-        <p>science & code</p>
+      <Header>
         <Link href="/">
           <a>Return to Posts</a>
         </Link>
-      </header>
+      </Header>
       <main>{children}</main>
     </>
   );

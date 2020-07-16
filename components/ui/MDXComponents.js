@@ -1,6 +1,5 @@
-import Code from "./Code.js";
+import H1 from "./H1.js";
 
 export default {
-  code: Code,
-  inlineCode: Code,
+  h1: H1,
 };

@@ -2,14 +2,14 @@
   "name": "next-starter",
   "version": "1.0.0",
   "description": "",
+  "license": "ISC",
+  "author": "Belen Curcio <bel@vercel.com>",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "dev": "next",
     "start": "next start"
   },
-  "author": "Belen Curcio <bel@vercel.com>",
-  "license": "ISC",
   "dependencies": {
     "@mdx-js/loader": "^1.6.6",
     "babel-plugin-import-glob-array": "^0.2.0",
@@ -18,7 +18,6 @@
     "next": "^9.4.4",
     "next-mdx-enhanced": "^3.0.0",
     "next-seo": "^4.7.2",
-    "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rehype": "^11.0.0",
@@ -27,7 +26,6 @@
     "remark-code-titles": "^0.1.1",
     "remark-frontmatter": "^2.0.0",
     "remark-math": "^2.0.1",
-    "remark-slug": "^6.0.0",
-    "webpack": "^4.43.0"
+    "remark-slug": "^6.0.0"
   }
 }

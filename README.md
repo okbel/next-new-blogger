@@ -1,11 +1,15 @@
 # next-new-blogger
 
-### Libraries used
-
-- Code support: `mdx-prism`
-- Math and Katex support: `remark-math` & `rehype-katex`
+Blog seeds have become incredibly difficult to mantain and this is an attempt to make it simple and easy to share ideas, thoughts, news and more while remaining true to web standards.
 
 ## Features
 
-- RSS
-- Sitemap
+- Next.js powered
+- MDX powered
+- Code Snippet Support
+- Math/KaTeX Support
+- SEO Ready
+
+## TODO
+
+- RSS, Sitemap
