@@ -1,6 +1,6 @@
 # next-new-blogger
 
-Blog seeds have become incredibly difficult to mantain and this is an attempt to make it simple and easy to share ideas, thoughts, news and more while remaining true to web standards.
+Blog seeds have become incredibly difficult to maintain. This is an attempt to make it simple and easy to share ideas, thoughts, and more while remaining true to web standards.
 
 ## Features
 
