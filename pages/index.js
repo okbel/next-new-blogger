@@ -1,7 +1,15 @@
 import Link from "next/link";
-import { frontMatter as posts } from "../pages/posts/**/*.mdx";
+import { frontMatter as postsArr } from "../pages/posts/*.mdx";
 
-export default function Index() {
+export async function getStaticProps() {
+  return {
+    props: {
+      posts: postsArr,
+    },
+  };
+}
+
+export default function Index({ posts }) {
   return (
     <div>
       <header>
@@ -10,13 +18,16 @@ export default function Index() {
       </header>
       <main>
         <ul>
-          {posts.map((p) => (
-            <li key={p.slug}>
-              <Link href={`posts/${p.slug}`} as={`posts/${p.slug}`}>
-                <a>{p.title}</a>
-              </Link>
-            </li>
-          ))}
+          {posts.map((p) => {
+            const relativeURL = p.__resourcePath.replace(".mdx", "");
+            return (
+              <li key={p.slug}>
+                <Link href={relativeURL} as={relativeURL}>
+                  <a>{p.title}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </main>
     </div>

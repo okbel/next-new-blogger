@@ -2,10 +2,14 @@ import Link from "next/link";
 import SEO from "@/core/SEO.js";
 
 export default function Wrapper(frontMatter) {
+  const slug = frontMatter.__resourcePath
+    .replace("posts/", "")
+    .replace(".mdx", "");
+
   return ({ children }) => (
     <>
       <SEO
-        url={`https://next-new-blogger.vercel.app/posts/${frontMatter.slug}`}
+        url={`https://next-new-blogger.vercel.app/posts/${slug}`}
         {...frontMatter}
       />
       <header>

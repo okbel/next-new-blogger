@@ -12,8 +12,4 @@ module.exports = withMdxEnhanced({
   fileExtensions: ["md", "mdx"],
   rehypePlugins: [rehypeKatex, rehypePrism],
   remarkPlugins: [remarkMath, remarkHeadings, remarkSlug, remarkCodeTitles],
-})({
-  experimental: {
-    modern: true,
-  },
-});
+})({});
